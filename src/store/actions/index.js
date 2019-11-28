@@ -8,7 +8,8 @@ import {
   DASHBOARD_GET_SECRET,
   VERIFY_OSU,
   VERIFY_OSU_ERROR,
-  SET_PROFILE
+  SET_PROFILE,
+  GET_LEADERBOARD
 } from "./types";
 
 const axiosHeaders = {
@@ -148,6 +149,24 @@ export const setProfile = data => async dispatch => {
     dispatch({
       type: SET_PROFILE,
       payload: res.data.osu_userid
+    });
+  } catch (err) {
+    console.error("axios error:", err.response);
+  }
+};
+
+//-----------------------------------
+// LEADERBOARD ACTIONS
+//-----------------------------------
+
+export const getLeaderboard = data => async dispatch => {
+  try {
+    const res = await axios.get(url + "/osu/leaderboard");
+    console.log("axios res:", res);
+
+    dispatch({
+      type: GET_LEADERBOARD,
+      payload: res.data
     });
   } catch (err) {
     console.error("axios error:", err.response);

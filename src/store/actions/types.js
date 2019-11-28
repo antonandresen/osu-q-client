@@ -8,3 +8,5 @@ export const VERIFY_OSU = "VERIFY_OSU";
 export const VERIFY_OSU_ERROR = "VERIFY_OSU_ERROR";
 
 export const SET_PROFILE = "SET_PROFILE";
+
+export const GET_LEADERBOARD = "GET_LEADERBOARD";

@@ -12,7 +12,7 @@ const SignUp = props => {
   const onSubmit = async formData => {
     await props.SignUp(formData);
     if (!props.errorMessage) {
-      props.history.push("/dashboard");
+      props.history.push("/profile");
     }
   };
 
