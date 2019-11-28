@@ -15,10 +15,10 @@ const axiosHeaders = {
   "Content-Type": "application/json"
 };
 
-const isDevelopment = true;
+const isDevelopment = false;
 let url = "";
 if (isDevelopment) url = "http://localhost:5000/api/v1";
-else url = "http://anton.best/api/v1";
+else url = "https://osu-q.herokuapp.com/api/v1";
 
 export const oauthGoogle = data => async dispatch => {
   const res = await axios.post(url + "/users/oauth/google", {
