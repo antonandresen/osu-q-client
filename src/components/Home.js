@@ -7,7 +7,6 @@ const Home = props => {
   useEffect(() => {
     async function getData() {
       await props.getLeaderboard();
-      console.log("leaderboard", props.leaderboard);
     }
     getData();
   }, []);
@@ -17,18 +16,18 @@ const Home = props => {
       {props.leaderboard.length === 0 ? (
         <h2>Welcome!</h2>
       ) : (
-        <div class="row">
-          <div class="panel panel-primary filterable">
-            <div class="panel-heading">
-              <h3 class="panel-title">Leaderboard</h3>
+        <div className="row">
+          <div className="panel panel-primary filterable">
+            <div className="panel-heading">
+              <h3 className="panel-title">Leaderboard</h3>
             </div>
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr>
                   <th>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="#"
                       disabled
                     />
@@ -36,7 +35,7 @@ const Home = props => {
                   <th>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Username"
                       disabled
                     />
@@ -44,7 +43,7 @@ const Home = props => {
                   <th>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Rating"
                       disabled
                     />
@@ -52,7 +51,7 @@ const Home = props => {
                   <th>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Wins"
                       disabled
                     />
@@ -61,10 +60,14 @@ const Home = props => {
               </thead>
               <tbody>
                 {props.leaderboard.map((player, ix) => {
+                  {
+                    console.log("player", player);
+                  }
                   return (
-                    <tr>
-                      <td>{ix}</td>
+                    <tr key={ix}>
+                      <td>{ix + 1}</td>
                       <td>{player.username}</td>
+                      <td>{player.rating}</td>
                       <td>{player.wins}</td>
                     </tr>
                   );
