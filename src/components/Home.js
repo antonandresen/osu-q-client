@@ -59,7 +59,7 @@ const Home = props => {
                 </tr>
               </thead>
               <tbody>
-                {props.leaderboard.reverse().map((player, ix) => {
+                {props.leaderboard.map((player, ix) => {
                   {
                     console.log("player", player);
                   }

@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case GET_LEADERBOARD:
       return {
         ...state,
-        leaderboard: action.payload
+        leaderboard: action.payload.reverse()
       };
     default:
       return state;
