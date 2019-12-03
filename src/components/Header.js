@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import * as actions from "../store/actions";
-import Profile from "./Profile";
 
 const Header = props => {
   const signOut = () => {
@@ -20,15 +19,13 @@ const Header = props => {
       </Link>
 
       <div className="collapse navbar-collapse">
-        {/*
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/dashboard">
-                Dashboard
-              </Link>
-            </li>
-          </ul>
-        */}
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/mappool">
+              Mappool
+            </Link>
+          </li>
+        </ul>
 
         <ul className="nav navbar-nav ml-auto">
           {!props.isAuthenticated ? (
